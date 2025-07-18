@@ -1,25 +1,23 @@
 /* =============================
-   Base Styles & Global Settings
+   Reset & Base Styles
 ============================= */
-
-:root {
-  scroll-padding-top: 80px; /* For smooth scroll offset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  margin: 0;
-  padding-top: 80px; /* Offset for fixed header */
   font-family: 'Segoe UI', sans-serif;
   background-color: #fff;
+  color: #333;
 }
 
-/* =============================
-   Container
-============================= */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -30,13 +28,12 @@ body {
    Header
 ============================= */
 .main-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
   background: #800040;
-  padding: 15px 0;
   color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .header-flex {
@@ -68,31 +65,33 @@ body {
   list-style: none;
   display: flex;
   gap: 25px;
-  margin: 0;
-  padding: 0;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  padding: 5px 10px;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
 }
 
 /* =============================
-   Hero Slider Section
+   Hero Slider
 ============================= */
 .hero-slider {
   position: relative;
-  background: url('../images/home-bg.png') no-repeat center center / cover;
-  padding: 60px 20px 30px;
+  background: url('../images/home-bg.png') no-repeat center center/cover;
+  padding: 60px 20px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .slider-window {
   max-width: 1000px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -102,9 +101,8 @@ body {
 }
 
 .slide {
-  flex: 0 0 calc(100% / 3);
+  flex: 0 0 33.3333%;
   padding: 10px;
-  box-sizing: border-box;
 }
 
 .slide img {
@@ -115,9 +113,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* =============================
-   Slider Dots
-============================= */
+/* Slider Dots */
 .slider-dots {
   text-align: center;
   margin-top: 15px;
@@ -144,7 +140,6 @@ body {
 .about-section {
   padding: 60px 20px;
   background-color: #fff5f7;
-  color: #333;
   text-align: center;
 }
 
@@ -159,22 +154,6 @@ body {
   max-width: 800px;
   margin: 0 auto 20px;
   line-height: 1.6;
-}
-
-/* =============================
-   Gallery & Video Sections
-============================= */
-.gallery-section,
-.videos-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.gallery-section h2,
-.videos-section h2 {
-  font-size: 2rem;
-  color: #800040;
-  margin-bottom: 20px;
 }
 
 /* =============================
@@ -195,7 +174,6 @@ body {
 .contact-info p {
   margin: 10px 0;
   font-size: 16px;
-  color: #444;
 }
 
 .icon {
@@ -222,39 +200,11 @@ body {
 .whatsapp-bar a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .whatsapp-bar a:hover {
   text-decoration: underline;
 }
-
-/* =============================
-   Responsive Styles
-============================= */
-@media (max-width: 992px) {
-  .slide {
-    flex: 0 0 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  .slide {
-    flex: 0 0 100%;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .header-flex {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 
 /* =============================
    Footer
@@ -271,4 +221,46 @@ body {
   margin: 0;
 }
 
+/* =============================
+   Scroll Offset for Anchor Links
+============================= */
+:root {
+  scroll-padding-top: 80px;
+}
 
+section:before {
+  content: "";
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+  visibility: hidden;
+}
+
+/* =============================
+   Responsive Design
+============================= */
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+  }
+
+  .slide img {
+    height: 220px;
+  }
+
+  .whatsapp-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
