@@ -1,0 +1,31 @@
+.promo-banner {
+  background-color: #e74c3c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.promo-left, .promo-center, .promo-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.promo-center span {
+  background: rgba(255,255,255,0.2);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.promo-right {
+  background-color: #fff;
+  color: #e74c3c;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
