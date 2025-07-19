@@ -179,7 +179,7 @@ body {
 }
 
 .whatsapp-bar {
-  display: flex !important;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #075e54;
@@ -242,5 +242,4 @@ body {
     flex-direction: column;
     gap: 10px;
   }
-
 }
