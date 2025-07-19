@@ -7,14 +7,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Keeps sections below sticky header */
+  scroll-padding-top: 80px; /* Adjust this based on your header height */
 }
 
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #fff;
   color: #333;
-  line-height: 1.6;
 }
 
 .container {
@@ -100,14 +99,10 @@ body {
 .slider-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
 }
 
 .slide {
   flex: 0 0 33.3333%;
-  scroll-snap-align: start;
   padding: 10px;
 }
 
@@ -139,16 +134,7 @@ body {
   background-color: #800040;
 }
 
-/* Sections */
-section:before {
-  content: '';
-  display: block;
-  height: 80px;
-  margin-top: -80px;
-  visibility: hidden;
-}
-
-/* About Section */
+/* About */
 .about-section {
   padding: 60px 20px;
   background-color: #fff5f7;
@@ -168,7 +154,7 @@ section:before {
   line-height: 1.6;
 }
 
-/* Contact Section */
+/* Contact */
 .contact-section {
   background-color: #f9f9f9;
   padding: 60px 20px;
@@ -193,7 +179,7 @@ section:before {
 }
 
 .whatsapp-bar {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
   background-color: #075e54;
@@ -204,8 +190,8 @@ section:before {
   border-radius: 6px;
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  visibility: visible !important;
-  opacity: 1 !important;
+  visibility: visible !important;  /* Ensure it's not hidden */
+  opacity: 1 !important;           /* Avoid accidental hiding with animation */
 }
 
 /* Footer */
@@ -221,7 +207,7 @@ section:before {
   margin: 0;
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -233,17 +219,10 @@ section:before {
     width: 100%;
     background-color: #800040;
     margin-top: 10px;
-    gap: 10px;
-    padding: 10px 0;
   }
 
   .nav-links.active {
     display: flex;
-  }
-
-  .header-flex {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .slide {
@@ -254,9 +233,14 @@ section:before {
     height: 220px;
   }
 
+  .header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .whatsapp-bar {
     flex-direction: column;
     gap: 10px;
-    text-align: center;
   }
+
 }
