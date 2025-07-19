@@ -1,6 +1,4 @@
-/* =============================
-   Reset & Base Styles
-============================= */
+/* Reset & Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,7 +7,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  scroll-padding-top: 80px; /* Adjust this based on your header height */
 }
 
 body {
@@ -24,9 +22,7 @@ body {
   padding: 0 20px;
 }
 
-/* =============================
-   Header
-============================= */
+/* Header */
 .main-header {
   background: #800040;
   color: white;
@@ -61,11 +57,19 @@ body {
   margin-top: 2px;
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
 .nav-links {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 25px;
-  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -79,11 +83,8 @@ body {
   text-decoration: underline;
 }
 
-/* =============================
-   Hero Slider
-============================= */
+/* Hero Slider */
 .hero-slider {
-  position: relative;
   background: url('../images/home-bg.png') no-repeat center center/cover;
   padding: 60px 20px;
   overflow: hidden;
@@ -113,7 +114,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Slider Dots */
+/* Dots */
 .slider-dots {
   text-align: center;
   margin-top: 15px;
@@ -127,16 +128,13 @@ body {
   background-color: #ccc;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 .slider-dots .active {
   background-color: #800040;
 }
 
-/* =============================
-   About Section
-============================= */
+/* About */
 .about-section {
   padding: 60px 20px;
   background-color: #fff5f7;
@@ -156,9 +154,7 @@ body {
   line-height: 1.6;
 }
 
-/* =============================
-   Contact Section
-============================= */
+/* Contact */
 .contact-section {
   background-color: #f9f9f9;
   padding: 60px 20px;
@@ -168,7 +164,6 @@ body {
 .contact-section h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #333;
 }
 
 .contact-info p {
@@ -194,21 +189,9 @@ body {
   font-size: 16px;
   border-radius: 6px;
   margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.whatsapp-bar a {
-  color: white;
-  text-decoration: none;
-}
-
-.whatsapp-bar a:hover {
-  text-decoration: underline;
-}
-
-/* =============================
-   Footer
-============================= */
+/* Footer */
 .site-footer {
   background-color: #800040;
   color: #fff;
@@ -221,34 +204,22 @@ body {
   margin: 0;
 }
 
-/* =============================
-   Scroll Offset for Anchor Links
-============================= */
-:root {
-  scroll-padding-top: 80px;
-}
-
-section:before {
-  content: "";
-  display: block;
-  height: 80px;
-  margin-top: -80px;
-  visibility: hidden;
-}
-
-/* =============================
-   Responsive Design
-============================= */
+/* Responsive */
 @media (max-width: 768px) {
-  .header-flex {
-    flex-direction: column;
-    align-items: flex-start;
+  .menu-toggle {
+    display: block;
   }
 
   .nav-links {
+    display: none;
     flex-direction: column;
-    gap: 10px;
+    width: 100%;
+    background-color: #800040;
     margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .slide {
@@ -257,6 +228,11 @@ section:before {
 
   .slide img {
     height: 220px;
+  }
+
+  .header-flex {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .whatsapp-bar {
