@@ -15,10 +15,7 @@
         <div class="logo">yogathera</div>
         <p class="tagline">Where body and breath find balance.</p>
       </div>
-
-      <!-- Hamburger Button -->
       <button class="menu-toggle" id="menuToggle">&#9776;</button>
-
       <nav id="mainNav">
         <ul class="nav-links" id="navLinks">
           <li><a href="#home">Home</a></li>
@@ -32,7 +29,7 @@
   </header>
 
   <!-- Hero Slider -->
-  <section id="home" class="hero-slider">
+  <section id="home" class="hero-slider section-offset">
     <div class="slider-window">
       <div class="slider-track" id="sliderTrack">
         <div class="slide"><img src="images/yoga-1.png" alt="Yoga 1" /></div>
@@ -46,48 +43,41 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about-section">
+  <section id="about" class="about-section section-offset">
     <div class="container">
       <h2>About Me</h2>
-      <p>
-        I’m <strong>Ragini</strong>, a certified Yoga and Physiotherapy Trainer with over 10 years of experience helping people improve their health, mobility, and inner balance. My approach blends the ancient wisdom of yoga with modern physiotherapy techniques to create personalized wellness programs for every individual.
-      </p>
-      <p>
-        Whether you're seeking relief from chronic pain, recovering from an injury, or simply wanting to improve your flexibility, posture, or peace of mind — I can guide you through mindful movement and therapeutic practices tailored to your needs.
-      </p>
-      <p>
-        My sessions are suitable for all age groups and fitness levels, and are available both in-person and online. Let's work together toward a stronger body, calmer mind, and more energized life.
-      </p>
+      <p><strong>Ragini</strong>, certified Yoga & Physiotherapy Trainer with 10+ years’ experience in promoting health, mobility, and mindfulness.</p>
+      <p>Combining yoga with physiotherapy for personalized wellness plans suited for all age groups and fitness levels, both in-person and online.</p>
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="gallery-section">
+  <!-- Gallery -->
+  <section id="gallery" class="gallery-section section-offset">
     <div class="container">
       <h2>Gallery</h2>
       <p>Gallery content coming soon...</p>
     </div>
   </section>
 
-  <!-- Videos Section -->
-  <section id="videos" class="videos-section">
+  <!-- Videos -->
+  <section id="videos" class="videos-section section-offset">
     <div class="container">
       <h2>Videos</h2>
       <p>Video content coming soon...</p>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
+  <!-- Contact -->
+  <section id="contact" class="contact-section section-offset">
     <div class="container">
       <h2>Contact Us</h2>
       <div class="contact-info">
         <p><img src="images/phone-icon.png" class="icon" alt="Phone" /> <strong>+91-8920485565</strong></p>
         <p><img src="images/email-icon.png" class="icon" alt="Email" /> <strong>ragini.yogathera@gmail.com</strong></p>
         <p><img src="images/location-icon.png" class="icon" alt="Location" /> <strong>Yogathera, Palla, Faridabad, India</strong></p>
-        <div class="whatsapp-bar">
+        <div class="whatsapp-bar" id="whatsappBar">
           <span>Send message</span>
-          <a href="https://wa.me/918920485565" target="_blank">WhatsApp ➤</a>
+          <a href="https://wa.me/918920485565" target="_blank" id="whatsappLink">WhatsApp ➤</a>
         </div>
       </div>
     </div>
@@ -103,15 +93,24 @@
   <!-- Scripts -->
   <script src="js/slider.js"></script>
   <script>
+    // Mobile menu toggle
     document.getElementById('menuToggle').addEventListener('click', function () {
       document.getElementById('navLinks').classList.toggle('active');
     });
 
-    // Scroll reset on refresh
+    // Reset scroll on refresh
     if (window.location.hash) {
       history.replaceState(null, null, window.location.pathname);
       window.scrollTo(0, 0);
     }
+
+    // Ensure WhatsApp link stays visible
+    document.getElementById('whatsappLink').addEventListener('click', () => {
+      setTimeout(() => {
+        document.getElementById('whatsappBar').style.visibility = 'visible';
+        document.getElementById('whatsappBar').style.opacity = '1';
+      }, 1000);
+    });
   </script>
 </body>
 </html>
