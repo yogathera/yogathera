@@ -7,25 +7,28 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adjust this based on your header height */
+  /* Adjusted scroll-padding-top to account for header height */
+  scroll-padding-top: 70px; /* Assuming header height is around 60px-70px */
 }
 
+/* General Body Styles (Crucial for full-width sections) */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
-  color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0; /* Absolutely no padding on body to allow full-width sections */
+    background-color: #f0f2f5; /* Light background for general page */
+    display: block; /* Revert to default block display for body */
+    color: #333;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
 }
 
+/* Container for consistent content width */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Section Scroll Offset Fix */
-.section-offset {
-  position: relative;
-  scroll-margin-top: 90px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Horizontal padding for content within container */
+    box-sizing: border-box;
+    width: 100%; /* Ensure container takes full width available */
 }
 
 /* Header */
@@ -36,6 +39,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 999;
+  width: 100%; /* Ensure header spans full width */
 }
 
 .header-flex {
@@ -89,17 +93,31 @@ body {
   text-decoration: underline;
 }
 
-/* Hero Slider */
+/* Hero Slider (FINAL FIX) */
 .hero-slider {
-  background: url('../images/home-bg.png') no-repeat center center/cover;
-  padding: 60px 20px;
+  /* No margin-top here; the body's flow will handle it */
+  background: url('../images/home-bg.png') no-repeat center center;
+  background-size: cover; /* Crucial: Ensures background fills the area */
+  background-attachment: scroll; /* Ensures background scrolls with page */
+  padding: 60px 0; /* Vertical padding for content, no horizontal padding here */
   overflow: hidden;
+  position: relative;
+  height: 550px; /* Fixed height for the slider section */
+  display: flex;
+  align-items: center; /* Vertically center slider-window */
+  justify-content: center; /* Horizontally center slider-window */
+  width: 100%; /* Ensure it takes full width of its parent (body) */
+  /* If body is block, this will take full width naturally */
 }
 
 .slider-window {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1000px; /* Max width for the slider content */
+  width: 95%; /* Adjusted width to give some side padding relative to the hero-slider */
+  margin: 0 auto; /* Center the slider window */
   overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 0; /* Removed padding from slider-window itself */
 }
 
 .slider-track {
@@ -108,13 +126,16 @@ body {
 }
 
 .slide {
-  flex: 0 0 33.3333%;
-  padding: 10px;
+  flex: 0 0 calc(100% / 3); /* Show 3 slides at a time */
+  padding: 10px; /* Padding around each individual slide image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slide img {
   width: 100%;
-  height: 300px;
+  height: 350px; /* Adjusted height for individual images */
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -123,17 +144,22 @@ body {
 /* Dots */
 .slider-dots {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 25px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .slider-dots span {
   display: inline-block;
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
   margin: 0 5px;
   background-color: #ccc;
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .slider-dots .active {
@@ -145,6 +171,7 @@ body {
   padding: 60px 20px;
   background-color: #fff5f7;
   text-align: center;
+  width: 100%;
 }
 
 .about-section h2 {
@@ -160,11 +187,112 @@ body {
   line-height: 1.6;
 }
 
+/* Yoga & Physiotherapy Services Section (The Two Cards with Rectangular Images) */
+.yoga-physio-services-section {
+    background-color: #f0f2f5; /* Match body background or a light variant */
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 20px; /* Space above this section */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.yoga-physio-services-section h2 {
+    font-size: 2.2em;
+    color: #800040; /* Purple heading from your design */
+    margin-bottom: 40px;
+}
+
+.yoga-physio-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Smaller cards */
+    gap: 30px; /* Space between cards */
+    justify-content: center;
+    align-items: stretch; /* Ensure cards stretch to same height */
+}
+
+.yoga-physio-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Uniform padding on all sides */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align content to the center horizontally */
+    text-align: center; /* Align text to the center */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for card itself */
+    min-height: 350px; /* Smaller height for the card */
+    position: relative;
+    overflow: hidden; /* Ensure content (especially image) respects border-radius */
+    
+    perspective: 1000px; /* Add perspective for 3D transformations */
+}
+
+.yoga-physio-card:hover {
+    transform: translateY(-5px); /* Card moves up on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.yoga-physio-card.pink-border {
+    border: 2px solid #ffc0cb; /* Light pink border */
+}
+
+.yoga-physio-card.green-border {
+    border: 2px solid #90ee90; /* Light green border */
+}
+
+/* Style for the rectangular image at the top of the card */
+.card-top-image {
+    width: 90%; /* Reduced from 100% to create horizontal padding */
+    height: 180px; /* Fixed height for the image - ADJUST THIS VALUE */
+    object-fit: cover; /* Image covers the area, cropping as needed */
+    display: block;
+    
+    margin-bottom: 20px; /* Space between image and heading */
+    
+    border-radius: 10px; /* Apply full border-radius to image */
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    transform-origin: center center;
+}
+
+/* Image "coming out" effect on card hover */
+.yoga-physio-card:hover .card-top-image {
+    transform: translateZ(30px) scale(1.08); /* Move forward (out) by 30px and scale up */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* More pronounced shadow for depth */
+}
+
+
+.yoga-physio-card h3 {
+    font-size: 1.6em; /* Slightly smaller heading */
+    margin-top: 0; /* Reset margin-top as image handles spacing above */
+    margin-bottom: 15px;
+    color: #333;
+    width: 100%; /* Ensure heading takes full available width */
+}
+
+.yoga-physio-card.pink-border h3 {
+    color: #d0006f;
+}
+
+.yoga-physio-card.green-border h3 {
+    color: #008060;
+}
+
+.yoga-physio-card p {
+    font-size: 1em; /* Slightly smaller paragraph text */
+    line-height: 1.6;
+    color: #555;
+    width: 100%; /* Ensure paragraph takes full available width */
+}
+
 /* Contact */
 .contact-section {
   background-color: #f9f9f9;
   padding: 60px 20px;
   text-align: center;
+  width: 100%;
 }
 
 .contact-section h2 {
@@ -196,9 +324,20 @@ body {
   border-radius: 6px;
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  visibility: visible !important;
-  opacity: 1 !important;
+  visibility: visible !important;  /* Ensure it's not hidden */
+  opacity: 1 !important;           /* Avoid accidental hiding with animation */
 }
+
+.whatsapp-bar a {
+    color: white; /* Ensure the link text is white */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Keep it bold */
+    transition: color 0.3s ease; /* Smooth transition for hover */
+  }
+
+.whatsapp-bar a:hover {
+    color: #e0e0e0; /* Slightly lighter white on hover */
+  }
 
 /* Footer */
 .site-footer {
@@ -207,6 +346,7 @@ body {
   text-align: center;
   padding: 20px 0;
   font-size: 14px;
+  width: 100%;
 }
 
 .site-footer p {
@@ -248,4 +388,34 @@ body {
     flex-direction: column;
     gap: 10px;
   }
+
+  /* Responsive Adjustments for Yoga & Physiotherapy Cards */
+  .yoga-physio-cards-grid {
+      grid-template-columns: 1fr;
+  }
+  .yoga-physio-card {
+      min-height: 320px;
+  }
+  .card-top-image {
+      width: 90%; /* Maintain consistency */
+      height: 160px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 550px) {
+    .yoga-physio-card {
+        padding: 15px; /* Reduced padding */
+        min-height: 280px;
+    }
+    .card-top-image {
+        width: 95%; /* Adjust width for very small screens */
+        height: 140px; /* Adjust height for very small screens */
+        margin-bottom: 10px;
+    }
+    .yoga-physio-card h3 {
+        font-size: 1.4em;
+    }
+    .yoga-physio-card p {
+        font-size: 0.9em;
+    }
 }
