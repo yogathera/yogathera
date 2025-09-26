@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Yogathera</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/gallery.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+
 </head>
 <body>
 
-    <!-- Header Section -->
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo-area">
-                <div class="logo">yogathera</div>
-                <p class="tagline">Where body and breath find balance.</p>
+		<img src="images/yogathera-logo.png" alt="YogaThera Logo" class="site-logo">
+                <div class="logo-text">
+		   <div class="logo">yogathera</div>
+                   <p class="tagline">Restore, Recover and Renew with Therapy & Yoga.</p>
+                </div>
             </div>
 
-            <!-- Hamburger Button for Mobile Navigation -->
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">&#9776;</button>
 
-            <!-- Main Navigation -->
             <nav id="mainNav">
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
@@ -32,7 +36,6 @@
         </div>
     </header>
 
-    <!-- Hero Slider Section -->
     <section id="home" class="hero-slider">
         <div class="slider-window">
             <div class="slider-track" id="sliderTrack">
@@ -41,16 +44,15 @@
                 <div class="slide"><img src="images/yoga-3.png" alt="Woman meditating in a serene setting" /></div>
                 <div class="slide"><img src="images/yoga-4.png" alt="Yoga instructor guiding a student" /></div>
                 <div class="slide"><img src="images/physiotherapy-1.png" alt="Physiotherapist assisting a patient with exercises" /></div>
+                <div class="slide"><img src="images/physiotherapy-2.png" alt="Physiotherapist assisting a patient with exercises" /></div>
             </div>
         </div>
         <div class="slider-dots" id="sliderDots"></div>
     </section>
 
-    <!-- Section 1: Yoga & Physiotherapy Information (from your original index.html) -->
     <section id="yoga-physio-services" class="yoga-physio-services-section">
         <div class="container">
             <div class="yoga-physio-cards-grid">
-                <!-- Changed to onclick to navigate to services.html with hash -->
                 <div class="yoga-physio-card pink-border" id="yoga-info-card" onclick="window.location.href='services.html#yoga-tab'">
                     <img src="images/yoga-service.png" alt="Yoga Services" class="card-top-image">
                     <h3>Yoga Services</h3>
@@ -58,29 +60,28 @@
                         Personalized yoga sessions, Pranayama, Meditation, Group & Private Classes, Flexibility & Balance Training, Stress Management, Online Yoga Classes, Senior Yoga.
                     </p>
                 </div>
-                <!-- Changed to onclick to navigate to services.html with hash -->
                 <div class="yoga-physio-card green-border" id="physio-info-card" onclick="window.location.href='services.html#physio-tab'">
                     <img src="images/physiotherapy-service.png" alt="Physiotherapy Services" class="card-top-image">
                     <h3>Physiotherapy Services</h3>
                     <p>
-                        Pain Relief Therapy, Injury Recovery, Postural Correction, Home Visits, Joint Mobilization, Rehab Programs, Neurological & Orthopedic Physio, Women's Wellness Physio.
+                        Pain Relief Therapy, Injury Recovery, Postural Correction, Home Visits, Rehab Programs, Neurological & Orthopedic Physio, Women's Wellness Physio.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
             <h2>About Me</h2>
-        <p>
+	    <p>
 		<strong>
 		    Dr. Ragini – Physiotherapist & Internationally Certified Yoga Instructor
 		</strong>
 	    </p>
             <p>
                 <strong>Dr. Ragini</strong> is a highly accomplished Physiotherapist and Internationally Certified Yoga Instructor with over 12+ years of professional experience in healthcare, wellness, and rehabilitation. Accredited by the <strong>Ministry of AYUSH</strong>, India, and internationally certified by <strong>Swami Vivekananda Yoga Anusandhana Samsthana (S-VYASA University)</strong>, Bengaluru, she exemplifies authenticity and excellence in her practice.
+		<span class="tooltip" data-tooltip="A prestigious Indian government body accrediting wellness professionals.">Ministry of AYUSH</span>
             </p>
             <p>
                 Combining the scientific principles of physiotherapy with the timeless wisdom of yoga, <strong>Dr. Ragini</strong> offers a unique, evidence-based approach to health and well-being. She has successfully guided individuals of all age groups in improving flexibility, strength, posture, and stress management. Her programs are thoughtfully designed to be transformative, safe, and adaptable — especially for those managing chronic pain, musculoskeletal conditions, or undergoing rehabilitation after injury or surgery.
@@ -94,23 +95,126 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+
+    <!-- =================== Gallery Section =============================== -->
     <section id="gallery" class="gallery-section">
-        <div class="container">
-            <h2>Gallery</h2>
-            <p>Gallery content coming soon...</p>
-        </div>
-    </section>
+    <div class="container">
+    	<h2>Gallery</h2>
 
-    <!-- Videos Section -->
-    <section id="videos" class="videos-section">
-        <div class="container">
-            <h2>Videos</h2>
-            <p>Video content coming soon...</p>
-        </div>
-    </section>
+    <!-- Header -->
+    <div class="gallery-header">
+      <h4 class="gallery-title">
+        Photo <span>Gallery</span> <i class="fas fa-image"></i>
+      </h4>
+      <a href="gallery.html" class="view-all-btn">View All</a>
+    </div>
 
-    <!-- Contact Section -->
+    <!-- Image Grid -->
+    <div class="gallery-grid">
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-1.png">
+        <img src="images/gallery/gallery-1.png" alt="Yoga pose" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-2.png">
+        <img src="images/gallery/gallery-2.png" alt="Meditation" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-3.png">
+        <img src="images/gallery/gallery-3.png" alt="Instructor" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-4.png">
+        <img src="images/gallery/gallery-4.png" alt="Group session" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-5.png">
+        <img src="images/gallery/gallery-5.png" alt="Sunrise yoga" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-6.png">
+        <img src="images/gallery/gallery-6.png" alt="Stretching" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-7.png">
+        <img src="images/gallery/gallery-7.png" alt="Stretching" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-8.png">
+        <img src="images/gallery/gallery-8.png" alt="Stretching" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-9.png">
+        <img src="images/gallery/gallery-9.png" alt="Stretching" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-10.png">
+        <img src="images/gallery/gallery-10.png" alt="Stretching" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-11.png">
+        <img src="images/gallery/gallery-11.png" alt="Stretching" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-12.png">
+        <img src="images/gallery/gallery-12.png" alt="Stretching" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-13.png">
+        <img src="images/gallery/gallery-13.png" alt="Stretching" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-14.png">
+        <img src="images/gallery/gallery-14.png" alt="Stretching" loading="lazy">
+      </a>
+      <a href="#" class="gallery-item" data-src="images/gallery/gallery-15.png">
+        <img src="images/gallery/gallery-15.png" alt="Stretching" loading="lazy">
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =================== Videos Section =============================== -->
+<section id="videos" class="videos-section">
+    <div class="container">
+        <h2>Videos</h2>
+        <div class="gallery-header">
+            <h4 class="gallery-title">Video <span>Gallery</span> <i class="fas fa-video"></i></h4>
+            <a href="gallery.html#video-gallery" class="view-all-btn">View All</a>
+        </div>
+        <div class="gallery-grid" id="videoGalleryGrid">
+
+            <a href="#" class="gallery-item video-item" data-type="video" data-src="videos/video-1.mp4">
+                <video poster="images/video-poster/video-1-poster.png" playsinline muted loop>
+                    <source src="videos/video-1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"><i class="fas fa-play"></i></div>
+            </a>
+
+            <a href="#" class="gallery-item video-item" data-type="video" data-src="videos/video-2.mp4">
+                <video poster="images/video-poster/video-2-poster.png" playsinline muted loop>
+                    <source src="videos/video-2.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"><i class="fas fa-play"></i></div>
+            </a>
+
+            <a href="#" class="gallery-item video-item" data-type="video" data-src="videos/video-3.mp4">
+                <video poster="images/video-poster/video-3-poster.png" playsinline muted loop>
+                    <source src="videos/video-3.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"><i class="fas fa-play"></i></div>
+            </a>
+            
+        </div>
+    </div>
+</section> 
+
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    
+    <div class="lightbox-content-container">
+        <img class="lightbox-image" src="" alt="Lightbox image">
+        <video class="lightbox-video" controls></video> 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- move arrows outside -->
+    <a class="lightbox-prev"><i class="fas fa-chevron-left"></i></a>
+    <a class="lightbox-next"><i class="fas fa-chevron-right"></i></a>
+</div>
+
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Contact Us</h2>
@@ -126,15 +230,15 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2025 Yogathera. All rights reserved. | Designed & Managed by Devraj, bringing your vision to life.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/slider.js"></script>
+    <script src="js/gallery.js"></script> 
+    
     <script>
         // JavaScript for the mobile menu toggle
         document.getElementById('menuToggle').addEventListener('click', function () {
@@ -149,4 +253,3 @@
     </script>
 </body>
 </html>
-

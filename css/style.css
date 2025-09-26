@@ -7,39 +7,36 @@
 
 html {
   scroll-behavior: smooth;
-  /* Adjusted scroll-padding-top to account for header height */
-  scroll-padding-top: 70px; /* Assuming header height is around 60px-70px */
+  scroll-padding-top: 70px;
 }
 
-/* General Body Styles (Crucial for full-width sections) */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0; /* Absolutely no padding on body to allow full-width sections */
-    background-color: #f0f2f5; /* Light background for general page */
-    display: block; /* Revert to default block display for body */
+    padding: 0;
+    background-color: #f0f2f5;
+    display: block;
     color: #333;
-    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    min-height: 100vh;
 }
 
-/* Container for consistent content width */
 .container {
     max-width: 1200px;
-    margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Horizontal padding for content within container */
+    margin: 0 auto;
+    padding: 0 20px;
     box-sizing: border-box;
-    width: 100%; /* Ensure container takes full width available */
+    width: 100%;
 }
 
 /* Header */
 .main-header {
   background: #800040;
   color: white;
-  padding: 15px 0;
+  padding: 10px 10px;
   position: sticky;
   top: 0;
   z-index: 999;
-  width: 100%; /* Ensure header spans full width */
+  width: 100%;
 }
 
 .header-flex {
@@ -51,13 +48,58 @@ body {
 
 .logo-area {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
-.logo {
+.site-logo {
+  display: inline-block;
+  height: 60px;
+  width: auto;
+  display: block;
+
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo-text .logo {
   font-size: 28px;
   font-weight: bold;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.logo-text .tagline {
+  font-size: 13px;
+  color: #fff;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* Adjust spacing between menu items */
+}
+
+.main-nav a {
   color: white;
+  text-decoration: none;
+  font-size: 1.1em;
 }
 
 .tagline {
@@ -65,6 +107,7 @@ body {
   font-style: italic;
   color: #ffd8e4;
   margin-top: 2px;
+  line-height: 1.1;
 }
 
 .menu-toggle {
@@ -93,31 +136,29 @@ body {
   text-decoration: underline;
 }
 
-/* Hero Slider (FINAL FIX) */
+/* Hero Slider */
 .hero-slider {
-  /* No margin-top here; the body's flow will handle it */
   background: url('../images/home-bg.png') no-repeat center center;
-  background-size: cover; /* Crucial: Ensures background fills the area */
-  background-attachment: scroll; /* Ensures background scrolls with page */
-  padding: 60px 0; /* Vertical padding for content, no horizontal padding here */
+  background-size: cover;
+  background-attachment: scroll;
+  padding: 60px 0;
   overflow: hidden;
   position: relative;
-  height: 550px; /* Fixed height for the slider section */
+  height: 550px;
   display: flex;
-  align-items: center; /* Vertically center slider-window */
-  justify-content: center; /* Horizontally center slider-window */
-  width: 100%; /* Ensure it takes full width of its parent (body) */
-  /* If body is block, this will take full width naturally */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .slider-window {
-  max-width: 1000px; /* Max width for the slider content */
-  width: 95%; /* Adjusted width to give some side padding relative to the hero-slider */
-  margin: 0 auto; /* Center the slider window */
+  max-width: 1000px;
+  width: 95%;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  padding: 0; /* Removed padding from slider-window itself */
+  padding: 0;
 }
 
 .slider-track {
@@ -126,8 +167,8 @@ body {
 }
 
 .slide {
-  flex: 0 0 calc(100% / 3); /* Show 3 slides at a time */
-  padding: 10px; /* Padding around each individual slide image */
+  flex: 0 0 calc(100% / 3);
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +176,7 @@ body {
 
 .slide img {
   width: 100%;
-  height: 350px; /* Adjusted height for individual images */
+  height: 350px;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -187,12 +228,12 @@ body {
   line-height: 1.6;
 }
 
-/* Yoga & Physiotherapy Services Section (The Two Cards with Rectangular Images) */
+/* Yoga & Physiotherapy Services Section */
 .yoga-physio-services-section {
-    background-color: #f0f2f5; /* Match body background or a light variant */
+    background-color: #f0f2f5;
     padding: 60px 20px;
     text-align: center;
-    margin-top: 20px; /* Space above this section */
+    margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -200,76 +241,69 @@ body {
 
 .yoga-physio-services-section h2 {
     font-size: 2.2em;
-    color: #800040; /* Purple heading from your design */
+    color: #800040;
     margin-bottom: 40px;
 }
 
 .yoga-physio-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Smaller cards */
-    gap: 30px; /* Space between cards */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
     justify-content: center;
-    align-items: stretch; /* Ensure cards stretch to same height */
+    align-items: stretch;
 }
 
 .yoga-physio-card {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px; /* Uniform padding on all sides */
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Align content to the center horizontally */
-    text-align: center; /* Align text to the center */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for card itself */
-    min-height: 350px; /* Smaller height for the card */
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 350px;
     position: relative;
-    overflow: hidden; /* Ensure content (especially image) respects border-radius */
-    
-    perspective: 1000px; /* Add perspective for 3D transformations */
+    overflow: hidden;
+    perspective: 1000px;
 }
 
 .yoga-physio-card:hover {
-    transform: translateY(-5px); /* Card moves up on hover */
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .yoga-physio-card.pink-border {
-    border: 2px solid #ffc0cb; /* Light pink border */
+    border: 2px solid #ffc0cb;
 }
 
 .yoga-physio-card.green-border {
-    border: 2px solid #90ee90; /* Light green border */
+    border: 2px solid #90ee90;
 }
 
-/* Style for the rectangular image at the top of the card */
 .card-top-image {
-    width: 90%; /* Reduced from 100% to create horizontal padding */
-    height: 180px; /* Fixed height for the image - ADJUST THIS VALUE */
-    object-fit: cover; /* Image covers the area, cropping as needed */
+    width: 90%;
+    height: 180px;
+    object-fit: cover;
     display: block;
-    
-    margin-bottom: 20px; /* Space between image and heading */
-    
-    border-radius: 10px; /* Apply full border-radius to image */
-    
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform-origin: center center;
 }
 
-/* Image "coming out" effect on card hover */
 .yoga-physio-card:hover .card-top-image {
-    transform: translateZ(30px) scale(1.08); /* Move forward (out) by 30px and scale up */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* More pronounced shadow for depth */
+    transform: translateZ(30px) scale(1.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-
 .yoga-physio-card h3 {
-    font-size: 1.6em; /* Slightly smaller heading */
-    margin-top: 0; /* Reset margin-top as image handles spacing above */
+    font-size: 1.6em;
+    margin-top: 0;
     margin-bottom: 15px;
     color: #333;
-    width: 100%; /* Ensure heading takes full available width */
+    width: 100%;
 }
 
 .yoga-physio-card.pink-border h3 {
@@ -281,11 +315,13 @@ body {
 }
 
 .yoga-physio-card p {
-    font-size: 1em; /* Slightly smaller paragraph text */
+    font-size: 1em;
     line-height: 1.6;
     color: #555;
-    width: 100%; /* Ensure paragraph takes full available width */
+    width: 100%;
 }
+
+
 
 /* Contact */
 .contact-section {
@@ -324,19 +360,19 @@ body {
   border-radius: 6px;
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  visibility: visible !important;  /* Ensure it's not hidden */
-  opacity: 1 !important;           /* Avoid accidental hiding with animation */
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .whatsapp-bar a {
-    color: white; /* Ensure the link text is white */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Keep it bold */
-    transition: color 0.3s ease; /* Smooth transition for hover */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
   }
 
 .whatsapp-bar a:hover {
-    color: #e0e0e0; /* Slightly lighter white on hover */
+    color: #e0e0e0;
   }
 
 /* Footer */
@@ -385,7 +421,7 @@ body {
   }
 
   .whatsapp-bar {
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
   }
 
@@ -397,19 +433,19 @@ body {
       min-height: 320px;
   }
   .card-top-image {
-      width: 90%; /* Maintain consistency */
-      height: 160px; /* Adjust height for smaller screens */
+      width: 90%;
+      height: 160px;
   }
 }
 
 @media (max-width: 550px) {
     .yoga-physio-card {
-        padding: 15px; /* Reduced padding */
+        padding: 15px;
         min-height: 280px;
     }
     .card-top-image {
-        width: 95%; /* Adjust width for very small screens */
-        height: 140px; /* Adjust height for very small screens */
+        width: 95%;
+        height: 140px;
         margin-bottom: 10px;
     }
     .yoga-physio-card h3 {
@@ -419,3 +455,4 @@ body {
         font-size: 0.9em;
     }
 }
+

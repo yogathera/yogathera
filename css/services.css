@@ -10,10 +10,6 @@ body {
     margin: 0;
     padding: 0; /* General padding for the body */
     background-color: #f0f2f5; /* Light background from your design */
-    display: flex;
-    flex-direction: column; /* Arrange sections vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
     min-height: 100vh;
     box-sizing: border-box; /* Include padding in element's total width and height */
 }
@@ -22,7 +18,7 @@ body {
 .main-header {
   background: #800040;
   color: white;
-  padding: 15px 0;
+  padding: 10px 10px;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -38,20 +34,66 @@ body {
 
 .logo-area {
   display: flex;
-  flex-direction: column;
+
+  align-items: center;
+  gap: 15px;
 }
 
-.logo {
+.site-logo {
+  display: inline-block;
+  height: 60px;
+  width: auto;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo-text .logo {
   font-size: 28px;
   font-weight: bold;
-  color: white;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
 }
+
+.logo-text .tagline {
+  font-size: 13px;
+  color: #fff;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* Adjust spacing between menu items */
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
 
 .tagline {
   font-size: 14px;
   font-style: italic;
   color: #ffd8e4;
   margin-top: 2px;
+  line-height: 1.1;
 }
 
 .menu-toggle {
@@ -413,9 +455,11 @@ body {
     .yoga-physio-cards-grid {
         grid-template-columns: 1fr;
     }
+
     .yoga-physio-card {
         min-height: 320px;
     }
+
     .card-top-image {
         width: 90%; /* Maintain consistency */
         height: 160px; /* Adjust height for smaller screens */
@@ -425,14 +469,52 @@ body {
     .service-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+
     .tab-btn {
         font-size: 1em;
         padding: 12px 20px;
     }
+
     .services-section {
         padding: 20px;
     }
+
+
+    .menu-toggle {
+            display: block;
+    }
+
+    .nav-links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            background-color: #800040;
+            margin-top: 10px;
+    }
+
+    .nav-links.active {
+            display: flex;
+    }
+
+    .header-flex {
+            flex-direction: column;
+            align-items: flex-start;
+    }
+
+    .nav-links li {
+            width: 100%;
+            text-align: center;
+            border-bottom: none;
+    }
+
+    .nav-links li a {
+            width: 100%;
+            text-align: center;
+            border-bottom: none;
+    }
+
 }
+
 
 @media (max-width: 550px) {
     /* Yoga & Physiotherapy Cards (Rectangular Images) */
