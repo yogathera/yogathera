@@ -421,8 +421,11 @@ body {
   }
 
   .whatsapp-bar {
-    flex-direction: column;
+    flex-direction: raw;
+    justify-content: space-between;
     gap: 10px;
+    flex-wrap: nowrap;
+    width: 100%;
   }
 
   /* Responsive Adjustments for Yoga & Physiotherapy Cards */
@@ -455,4 +458,5 @@ body {
         font-size: 0.9em;
     }
 }
+
 
