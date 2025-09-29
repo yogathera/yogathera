@@ -8,10 +8,11 @@ html {
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0; /* General padding for the body */
-    background-color: #f0f2f5; /* Light background from your design */
+    padding: 0; 
+    background-color: 
     min-height: 100vh;
-    box-sizing: border-box; /* Include padding in element's total width and height */
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -567,4 +568,122 @@ body {
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
     }
+}
+
+/* Contact */
+.contact-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.whatsapp-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #075e54;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.whatsapp-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+.whatsapp-bar a:hover {
+    color: #e0e0e0;
+  }
+
+/* Footer */
+.site-footer {
+  background-color: #800040;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  width: 100%;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #800040;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+  }
+
+  .slide img {
+    height: 220px;
+  }
+
+  .header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .whatsapp-bar {
+    flex-direction: raw;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  /* Responsive Adjustments for Yoga & Physiotherapy Cards */
+  .yoga-physio-cards-grid {
+      grid-template-columns: 1fr;
+  }
+  .yoga-physio-card {
+      min-height: 320px;
+  }
+  .card-top-image {
+      width: 90%;
+      height: 160px;
+  }
 }
